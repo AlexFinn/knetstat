@@ -1,11 +1,8 @@
-KSRC ?= /lib/modules/$(shell uname -r)/build
-
-KBUILD_EXTRA_SYMBOLS := $(KSRC)/Module.symvers
-
+KBUILD_EXTRA_SYMBOLS := /lib/modules/$(shell uname -r)/build/Module.symvers
 obj-m += knetstat.o
 
 all:
-	make -C $(KSRC) M=$(PWD) modules
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 
 clean:
-	make -C $(KSRC) M=$(PWD) clean
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
