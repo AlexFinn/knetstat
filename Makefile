@@ -1,3 +1,4 @@
+CONFIG_MODULE_SIG=n
 KSRC ?= /lib/modules/$(shell uname -r)/build
 
 KBUILD_EXTRA_SYMBOLS := $(KSRC)/Module.symvers
